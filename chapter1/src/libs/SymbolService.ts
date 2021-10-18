@@ -10,7 +10,7 @@ const repoFactory = new RepositoryFactoryHttp(nodeUrl, {
   websocketInjected: WebSocket,
 });
 
-const senderPrivateKey = '0D07FFFAC40B41C71D4149E3E8E1FF69CB63CD952BBEDB00D7917A07334C284F';
+const senderPrivateKey = process.env.VUE_APP_SENDER_PRIVATE_KEY;
 const senderAccount = Account.createFromPrivateKey(senderPrivateKey, networkType);
 
 // faucet address
