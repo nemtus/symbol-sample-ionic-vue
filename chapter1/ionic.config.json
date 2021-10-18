@@ -1,0 +1,7 @@
+{
+  "name": "helloIonicSymbol",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
