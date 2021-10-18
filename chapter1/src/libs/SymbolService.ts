@@ -1,4 +1,4 @@
-import { Account, Address, Deadline, NetworkType, PlainMessage, RepositoryFactoryHttp, TransactionService, TransferTransaction } from 'symbol-sdk';
+import { Account, Address, Deadline, NetworkCurrencies, NetworkType, PlainMessage, RepositoryFactoryHttp, TransactionService, TransferTransaction } from 'symbol-sdk';
 
 const nodeUrl = 'https://sym-test.opening-line.jp:3001';
 const networkType = NetworkType.TEST_NET;
@@ -21,7 +21,7 @@ export async function sendTransaction() {
   const transferTransaction = TransferTransaction.create(
     Deadline.create(epochAdjustment),
     Address.createFromRawAddress(targetAddress),
-    [],
+    [NetworkCurrencies.PUBLIC.currency.createRelative(1)],
     PlainMessage.create('hello ionic vue'),
     networkType,
   ).setMaxFee(110);
